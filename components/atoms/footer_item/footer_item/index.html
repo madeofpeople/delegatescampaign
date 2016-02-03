@@ -1,0 +1,18 @@
+{% set navItemIsActivePage = navItem.name|isSlugMatch(pageSlug) %}
+{% if navItemIsActivePage == true %}
+<li role="presentation" class="{{ navItem.name|slug }} active">
+{% else %}
+<li class="{{ navItem.name|slug }} leaf" role="menuitem">
+{% endif %}
+
+{% if navItem.dropdown %}
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{navItem.name}}</a>
+    <ul class="nav">
+      {% for item in navItem.dropdown %}
+        <li class="{{item.name|slug}}"><a href="#">{{item.name}}</a></li>
+      {% endfor %}
+    </ul>
+{% else %}
+<a title="{{navItem.title}}" href="{% if navItem.url %}{{ navItem.url }}{% else %}{{ navItem.name|slug }}{% endif %}">{{navItem.name}}</a>
+{% endif %}
+</li>
