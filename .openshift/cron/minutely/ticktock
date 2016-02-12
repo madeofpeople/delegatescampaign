@@ -1,15 +1,12 @@
 #!/bin/bash
-cd ~/app-root/repo/deploy/delegatescampaign
-pwd >> ${OPENSHIFT_LOG_DIR}/ticktock.log
-
 if [ ! -f $OPENSHIFT_DATA_DIR/last_run ]; then
   touch $OPENSHIFT_DATA_DIR/last_run
 fi
 if [[ $(find $OPENSHIFT_DATA_DIR/last_run -mmin +4) ]]; then #run every 5 mins
-  cd ~/
   rm -f $OPENSHIFT_DATA_DIR/last_run
   touch $OPENSHIFT_DATA_DIR/last_run
-  date >> ${OPENSHIFT_LOG_DIR}/ticktock.log
+  cd ~/app-root/repo/
+  pwd >> ${OPENSHIFT_LOG_DIR}/ticktock.log
   git pull -f
   npm install
   npm build
