@@ -5115,6 +5115,14 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+.mySelector, .anotherSelector {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  border: none;
+  cursor: pointer; }
+
 body {
   position: relative; }
   @media (min-width: 640px) {
