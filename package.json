@@ -29,7 +29,7 @@
     "test": "npm run build",
     "start": "grunt",
     "postinstall": "bower install",
-    "ghdeploy": "NODE_ENV=gh npm run build && grunt deploy:github",
+    "ghdeploy": "NODE_ENV=gh npm run build && grunt deploy:github"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
