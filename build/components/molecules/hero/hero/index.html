@@ -1,0 +1,11 @@
+<article class="hero-unit" style="background-image: url({% if toutImage %}{{toutImage.src}}{% else %}{{config.placeholderImage}}{% endif %});">
+  <div class="container">
+    <div class="content">
+      <h1 class="title">
+        <a href="#">{% if featuredToutHeadline %}{{featuredToutHeadline|safe}}{% else %}{{config.defaultHeadline|safe}}{% endif %}</a>
+      </h1>
+      <p class="blurb">{% if heroBlurb %}{{heroBlurb|safe}}{% else %}{{loremIpsum|limit(200)|safe}}{% endif %}</p>
+      {% include "../../atoms/button/button.html" %}
+    </div>
+  </div>
+</article>

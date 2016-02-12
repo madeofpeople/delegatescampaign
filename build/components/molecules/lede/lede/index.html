@@ -1,0 +1,19 @@
+{% if title or contents|striptags %}
+
+<section class="lede">
+
+  {% if title %}
+  <h2>{% if title %}{{title|safe}}{% else %}{{config.defaultHeadline|safe}}{% endif %}</h2>
+  {% endif %}
+
+  {% if contents|striptags %}
+    <div class="content">
+      <p>
+        {% if contents %}{{contents|safe}}{% else %}{{loremIpsum|limit(200)|safe}}{% endif %}
+      </p>
+    </div>
+  {% endif %}
+
+</section>
+
+{% endif %}
