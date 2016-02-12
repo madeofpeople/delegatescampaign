@@ -1,6 +1,6 @@
 #!/bin/bash
 cd ~/app-root/repo/deploy/delegatescampaign
-# pwd >> ${OPENSHIFT_LOG_DIR}/ticktock.log
+pwd >> ${OPENSHIFT_LOG_DIR}/ticktock.log
 
 if [ ! -f $OPENSHIFT_DATA_DIR/last_run ]; then
   touch $OPENSHIFT_DATA_DIR/last_run

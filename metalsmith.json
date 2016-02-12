@@ -14,7 +14,7 @@
     "metalsmith-markdown": {},
     "metalsmith-include": {},
     "metalsmith-permalinks": {
-      "pattern": "states/:title",
+      "pattern": ":abbr",
       "relative": false
     },
     "metalsmith-swig-helpers": {
