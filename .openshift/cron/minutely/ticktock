@@ -5,16 +5,11 @@ fi
 if [[ $(find $OPENSHIFT_DATA_DIR/last_run -mmin +4) ]]; then #run every 5 mins
   rm -f $OPENSHIFT_DATA_DIR/last_run
   touch $OPENSHIFT_DATA_DIR/last_run
-  "removing delegatescampaign directory" >> ${OPENSHIFT_PHP_LOG_DIR}/ticktock.log
+  date >> ${OPENSHIFT_LOG_DIR}/ticktock.log
   rm -rf delegatescampaign
-  "cloning repo" >> ${OPENSHIFT_PHP_LOG_DIR}/ticktock.log
   git clone https://github.com/madeofpeople/delegatescampaign
   cd delegatescampaign
-  "npm install" >> ${OPENSHIFT_PHP_LOG_DIR}/ticktock.log
   npm install
-  "npm build" >> ${OPENSHIFT_PHP_LOG_DIR}/ticktock.log
   npm build
-  "npm deploy" >> ${OPENSHIFT_PHP_LOG_DIR}/ticktock.log
   npm run gh-deploy
-  "complete!" >> ${OPENSHIFT_PHP_LOG_DIR}/ticktock.log
 fi
