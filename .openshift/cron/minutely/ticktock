@@ -1,5 +1,5 @@
 #!/bin/bash
-cd ~/app-root/repo/runtime/deploy
+cd ~/app-root/repo/deploy
 pwd >> ${OPENSHIFT_LOG_DIR}/ticktock.log
 
 if [ ! -f $OPENSHIFT_DATA_DIR/last_run ]; then
