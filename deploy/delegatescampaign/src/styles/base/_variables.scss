@@ -1,0 +1,73 @@
+
+/* bootstrap overrides */
+
+$body-bg: #fff;
+$gray-dark: #323232;
+$nav-inverse: #fff;
+
+$c-highlight: #0af;
+
+$btn-primary-bg: $gray-dark;
+
+$border-radius-base:        0px;
+$border-radius-large:       0px;
+$border-radius-small:       0px;
+
+$font-family-sans-serif:  "Source Sans Pro", Helvetica, Arial, sans-serif;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
+
+$font-size-base:          16px;
+
+$font-size-h1:            $font-size-base * 2.75;
+$font-size-h2:            $font-size-base * 2.5;
+$font-size-h3:            $font-size-base * 2;
+$font-size-h4:            $font-size-base * 1.5;
+$font-size-h5:            $font-size-base * 1.25;
+$font-size-h6:            $font-size-base;
+
+//** By default, this inherits from the `<body>`.
+$headings-font-family:    "Source Sans Pro", Helvetica, Arial, sans-serif;
+
+$navbar-height: auto;
+$navbar-padding-horizontal: 2em;
+$navbar-padding-vertical: 1.5em;
+
+// Navbar links
+$navbar-default-link-color:                #fff;
+$navbar-default-link-hover-color:          #fff;
+$navbar-default-link-active-color:         $gray-dark;
+$navbar-default-link-active-bg:            #000;
+
+$navbar-inverse-bg:                         rgba(0,0,0,.8);
+$navbar-inverse-border:                     none;
+$navbar-inverse-link-color:                 #fff;
+$navbar-inverse-link-hover-color:           darken(#fff, 30%);
+
+$jumbotron-padding:       2em;
+$jumbotron-font-size:     1em;
+
+//== Tabs
+$nav-tabs-border-color:                     none;
+
+$navbar-default-toggle-hover-bg:           #fff;
+$navbar-default-toggle-icon-bar-bg:        #fff;
+$navbar-default-toggle-border-color:       transparent;
+
+$navbar-inverse-toggle-hover-bg:            #fff;
+$navbar-inverse-toggle-icon-bar-bg:         #fff;
+$navbar-inverse-toggle-border-color:        transparent;
+
+//** Global color for active items (e.g., navs or dropdowns).
+$component-active-color:    #fff;
+//** Global background color for active items (e.g., navs or dropdowns).
+$component-active-bg:       $c-highlight;
+
+$screen-xs:                  640px;
+$screen-sm:                  760px;
+$screen-md:                  1000px;
+$screen-lg:                  1200px;
+$screen-xl:                  1500px;
+$screen-xxl:                 1800px;
+$grid-float-breakpoint:      $screen-md;

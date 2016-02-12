@@ -1,0 +1,31 @@
+{% extends '../layouts/html.html' %}
+
+{% block contents %}
+
+    {% include "../../src/components/molecules/hero/hero.html" %}
+
+    <div class="container">
+
+      <section class="row section-states">
+        <ul>
+        {% for state in collections.states %}
+          <li><a href="states/{{state.title|slug}}">{{state.title|safe}}</a></li>
+        {% endfor %}
+        </ul>
+      </section>
+
+      <section class="row section-touts">
+        <!--
+          {# is a swig comment #}
+          this block is just here to show how to include tempaltes
+        -->
+        {#
+          {% set toutClassNames="threeup" %}
+          {% include "../../src/components/molecules/tout/tout.html" %}
+          {% include "../../src/components/molecules/tout/tout.html" %}
+          {% include "../../src/components/molecules/tout/tout.html" %}
+        #}
+      </section>
+
+    </div>
+{% endblock %}

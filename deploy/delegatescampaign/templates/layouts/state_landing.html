@@ -1,0 +1,36 @@
+{% extends '../layouts/html.html' %}
+
+{% block contents %}
+
+  <article>
+
+    <h1>This is the {{title|safe}} Page</h1>
+
+    {% include "../../src/components/molecules/lede/lede.html" with lede only%}
+
+    {{contents|safe}}
+
+    <section class="delegates">
+      <h2>Delegates for {{title|safe}}</h2>
+      <table>
+        <thead>
+          <tr>
+            <td>Name</td>
+            <td>Phone</td>
+          </tr>
+        </thead>
+        <tbody>
+        {% for row, val in gSheets["Delegates"].rows %}
+          {% if val.state == abbr %}
+          <tr>
+            <td class="name">{{val.name}}</td>
+            <td class="phone">{{val.phone}}</td>
+          </tr>
+          {% endif %}
+        {% endfor %}
+        </tbody>
+      </table>
+    </section>
+  </article>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+<article class="tout {{toutClassNames|safe}}">
+  <div class="media">
+    <img src="{% if toutImage %}{{toutImage.src}}{% else %}{{config.placeholderImage}}{% endif %}" alt="{% if toutImage && toutImage.alt %}{{toutImage.alt}}{% else %}{{config.defaultAltText}}{% endif %}">
+  </div>
+  <div class="content">
+    <h4 class="title">
+      <a href="#">{% if featuredToutHeadline %}{{featuredToutHeadline|safe}}{% else %}{{config.defaultHeadline|safe}}{% endif %}</a>
+    </h4>
+    <p class="blurb">{% if toutBlurb %}{{toutBlurb|safe}}{% else %}{{loremIpsum|limit(120)|safe}}{% endif %}</p>
+    {% set buttonVariant = "tout" %}
+    {% include "../../atoms/button/button.html" %}
+  </div>
+</article>

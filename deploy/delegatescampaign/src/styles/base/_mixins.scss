@@ -1,0 +1,70 @@
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal ) {
+  @font-face {
+    font-family: $font-family;
+    src: url('#{$file-path}.woff') format('woff'); 
+    font-weight: $weight;
+    font-style: $style;
+    font-stretch: none;
+  }
+}
+
+@mixin fa-search ($extend: true) {
+  @if $extend {
+    @extend .fa;
+    @extend .fa-search;
+  }
+  @else {
+    .#{$fa-css-prefix} {
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome; // shortening font declaration
+      font-size: inherit; // can't have font-size inherit on line above, so need to override
+      text-rendering: auto; // optimizelegibility throws things off #1094
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .#{$fa-css-prefix}-search:before { content: $fa-var-search; }
+  }
+}
+
+@mixin link-button ($extend: true) {
+  @if $extend {
+    @extend %link-button;
+  }
+  @else {
+    background:none!important;
+    border:none;
+    padding:0!important;
+    font: inherit;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+/* placeholder mixin */
+
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+
+}
+/* end placeholder mixin */

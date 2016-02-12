@@ -1,0 +1,6 @@
+---
+pattern: content/states/*.md
+sortBy: title
+---
+
+The 50 states.

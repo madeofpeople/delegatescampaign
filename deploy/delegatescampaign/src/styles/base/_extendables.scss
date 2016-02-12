@@ -1,0 +1,107 @@
+// resets a button to look like a link
+%link-button {
+  background:none;
+  border:none;
+  padding:0;
+  font: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+// self exaplanatory
+%responsive-image{
+  width: 100% !important;
+  height: auto !important;
+}
+
+%center-h {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+%center-v {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+%panelShadow {
+  box-shadow: 1px 1px 3px rgba(#000,.3);
+}
+
+
+%responsive-item {
+  width: 100%;
+  margin: 0 auto;
+  img {
+    @extend %responsive-image;
+  }
+}
+
+%grid-2-2-3-3 {
+  @include make-xs-column(6);
+  @include make-sm-column(6);
+  @include make-md-column(4);
+  @include make-lg-column(4);
+  @extend %responsive-item;
+}
+
+%grid-2-2-3-4 {
+  @include make-xs-column(6);
+  @include make-sm-column(6);
+  @include make-md-column(4);
+  @include make-lg-column(3);
+  @extend %responsive-item;
+}
+
+%breakpoint-visualizer {
+
+  position: relative;
+
+  &:before {
+    @media(min-width: $screen-xs) {
+      content: 'xs';
+      width: 25px;
+      height: 20px;
+      padding: 3px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 999;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      font-size: 12px;
+      border-top-right-radius: 5px;
+    }
+
+    @media(min-width: $screen-sm) {
+      content: 'sm';
+    }
+
+    @media(min-width: $screen-md) {
+      content: 'md';
+    }
+
+    @media(min-width: $screen-lg) {
+      content: 'lg';
+    }
+
+    @media(min-width: $screen-xl) {
+      content: 'xl';
+    }
+
+  }
+}
+
+%transition-timing {
+  transition-duration: .25s;
+  transition-timing-function: cubic-bezier(.42, 0, .58, 1);
+}
+
+// Type color helpers
+//////////////////////////////////

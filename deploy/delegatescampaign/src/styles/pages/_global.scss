@@ -1,0 +1,9 @@
+html,
+body,
+body > main {
+  height: 100%;
+}
+
+body {
+  @extend %breakpoint-visualizer;
+}

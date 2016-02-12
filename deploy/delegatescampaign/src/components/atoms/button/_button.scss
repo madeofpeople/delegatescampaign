@@ -1,0 +1,65 @@
+/*
+Button
+
+Buttons are essential
+
+Markup:
+<button role="button" class="button"><span>CTA of Some Sort</span><i class="icon terminal" aria-hidden="true"></i></button>
+
+Styleguide eecs_ui.button
+*/
+
+%button--hover {
+  background-color: $gray;
+  color: #fff;
+}
+
+%button--active {
+  background-color: #fff;
+  color: $gray-dark;
+}
+
+%button {
+  @extend .btn;
+  @extend .btn-primary;
+  transition-property: background-color;
+  @extend %transition-timing;
+  width: 100%;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border: none;
+  font-weight: bold;
+  background-color: $gray-dark;//$c-eecs;
+  &:hover,
+  &:focus {
+    @extend %button--hover;
+  }
+  &:active {
+    @extend %button--active;
+  }
+  &.hero {
+    @extend %button-hero;
+  }
+  @media (min-width: $screen-md){
+    font-size: 1.2em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+  }
+}
+
+// for styleguide
+.button {
+  @extend %button;
+}
+
+.button.eecs {
+  @extend %button-eecs;
+}
+
+.button.ee {
+  @extend %button-ee;
+}
+
+.button.cs {
+  @extend %button-cs;
+}

@@ -1,0 +1,53 @@
+/*
+Hero
+
+The hero's a big deal.
+
+*/
+
+%hero-unit {
+  width: 100%;
+  background: #eee;
+  margin-bottom: 3em;
+  min-height: 12em;
+  max-height:25em;
+  @extend .clearfix;
+  @extend %eecs-hero--xs;
+  @extend %eecs-hero--sm;
+  @extend %eecs-hero--md;
+  @extend %eecs-hero--lg;
+  @extend %eecs-hero--xl;
+
+}
+
+%eecs-hero--xs {
+  @media(min-width:$screen-sm) {
+  }
+}
+
+%eecs-hero--sm {
+  @media(min-width:$screen-sm) {
+  }
+}
+
+%eecs-hero--md {
+  @media (min-width: $screen-md) {
+  }
+}
+
+%eecs-hero--lg {
+  @media (min-width: $screen-lg) {
+  }
+}
+
+%eecs-hero--xl {
+  @media(min-width:$screen-xl) {
+  }
+}
+
+
+//////////////////////////////////
+
+.hero-unit {
+  @extend %hero-unit;
+}

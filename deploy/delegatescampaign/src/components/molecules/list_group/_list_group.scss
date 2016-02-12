@@ -1,0 +1,13 @@
+%list-group {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: lighten( $gray,65%);
+  border-top: 1px lighten($gray,30%) solid;
+  transition-property: background-color;
+  @extend %transition-timing;
+}
+
+.list-group {
+  @extend %list-group;
+}

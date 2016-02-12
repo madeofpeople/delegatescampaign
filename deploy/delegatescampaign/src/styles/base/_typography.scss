@@ -1,0 +1,89 @@
+
+/*
+Typographic Styles
+
+Headings, paragraphs, and typography styles.
+
+Markup:
+<div class="content">
+<h1>An H1 Header: Hamburgerfions Sasquach</h1>
+<h2>An H2 Header: Hamburgerfions Sasquach</h2>
+<h3>An H3 Header: Hamburgerfions Sasquach</h3>
+<h4>An H4 Header: Hamburgerfions Sasquach</h4>
+<h5>An H5 Header: Hamburgerfions Sasquach</h5>
+<h6>An H6 Header: Hamburgerfions Sasquach</h6>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<blockquote>Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur.</blockquote>
+<ul>
+  <li>A list item</li>
+  <li>A list item</li>
+  <li>A list item</li>
+  <li>A list item</li>
+  <li>A list item</li>
+</ul>
+</div>
+
+Styleguide eecs_global.typography
+*/
+
+// Source Sans Pro Vendor
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('../vendor/fontface-source-sans-pro/fonts/WOFF/OTF/SourceSansPro-Regular.otf.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('../vendor/fontface-source-sans-pro/fonts/WOFF/OTF/SourceSansPro-It.otf.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('../vendor/fontface-source-sans-pro/fonts/WOFF/OTF/SourceSansPro-Bold.otf.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('../vendor/fontface-source-sans-pro/fonts/WOFF/OTF/SourceSansPro-BoldIt.otf.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+// Berkeley.edu entypo subset for "By the Numbers"
+@font-face {
+  font-family: 'entypo';
+  src: url('../fonts/fontello.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-bottom: .25em;
+  line-height: 1;
+  letter-spacing: .05em;
+  font-weight: bold
+}
+
+%h6 {
+  font-size: $font-size-h5;
+  font-family: $font-family-base;
+  font-weight: bold;
+}

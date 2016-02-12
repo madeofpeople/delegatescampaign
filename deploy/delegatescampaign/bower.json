@@ -1,0 +1,9 @@
+{
+  "name": "delegatescampaign",
+  "version": "0.0.1",
+  "dependencies": {
+    "bootstrap-sass-twbs": "~3.3.5",
+    "fontawesome": "~4.2.0",
+    "fontface-source-sans-pro": "*"
+  }
+}

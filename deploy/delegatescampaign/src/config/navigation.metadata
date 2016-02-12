@@ -1,0 +1,37 @@
+---
+primary:
+  - name: a link
+    url: #
+  - name: a link
+    url: #
+  - name: a link
+    url: #
+    dropdown:
+      - name: A sublink
+        url: ##
+      - name: A sublink
+        url: ##
+      - name: A sublink
+        url: ##
+      - name: A sublink
+        url: ##
+      - name: A sublink
+        url: ##
+      - name: A sublink
+        url: ##
+  - name: a link
+    url: #
+  - name: a link
+    url: #
+  - name: a link
+    url: #
+
+
+
+footer:
+- name: a link
+  url: #
+- name: a link
+  url: #
+- name: a link
+  url: #

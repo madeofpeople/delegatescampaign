@@ -1,0 +1,66 @@
+/*
+Tout
+
+Content blocks leading to other places
+
+*/
+
+%threeup {
+  @extend .col-sm-6;
+  @extend .col-md-4;
+}
+
+%twoup {
+  @extend .col-sm-6;
+  @extend .col-md-6;
+}
+
+%tout {
+
+  margin-bottom: 1em;
+
+  &.threeup {
+    @extend %threeup;
+  }
+
+  &.twoup {
+    @extend %twoup;
+  }
+
+  .media {
+    img {
+      display: block;
+      @extend .img-responsive;
+    }
+  }
+
+  .content {
+  }
+
+  .title {
+  }
+
+  ul {
+    @extend %list-group;
+    li {
+      @extend %list-group-item;
+    }
+  }
+
+  .button {
+    @extend %button;
+    background-color: $gray-dark;
+    color: #fff;
+    &:hover {
+      background-color: $gray;
+    }
+    &:active {
+      background-color: darken( $gray, 30%);
+    }
+  }
+
+}
+
+.tout {
+  @extend %tout;
+}

@@ -1,0 +1,15 @@
+{% extends '../layouts/html.html' %}
+
+{% block contents %}
+
+  <article>
+
+    <h1>{{title|safe}}</h1>
+
+    {% include "../../src/components/molecules/lede/lede.html" with lede only%}
+
+    {{contents|safe}}
+
+  </article>
+
+{% endblock %}
