@@ -22,14 +22,14 @@
   <meta itemprop="name" content="{{ config.title }}" />
   <!-- <meta itemprop="image" content="[ LISTING IMAGE ]" /> -->
   <meta itemprop="description" content="{{ config.description }}" />
-   
+
   <meta property="og:title" content="{{ config.title }}" />
   <meta property="og:type" content="article" />
   <meta property="og:description" content="{{ config.definition }}" />
   <!-- <meta property="og:image" content="[ LISTING IMAGE ]" /> -->
   <meta property="og:url" content="http://superdelegatedemocracy.com/" />
   <meta property="og:site_name" content="{{ config.title }}" />
-   
+
   <meta name="twitter:card" content="{{ config.description }}">
   <meta name="twitter:title" content="{{ config.title }}">
   <meta name="twitter:description" content="{{ config.definition }}">
@@ -37,7 +37,6 @@
   <meta name="twitter:url" content="http://superdelegatedemocracy.com/">
 
   <title>
-	DID IT DO IT?????
     {% block title %}{{config.title | title}}{% endblock %}
   </title>
 
@@ -59,6 +58,7 @@
 </head>
 <body class="{% if pageSlug %}{{pageSlug}}{% else %}{{title|slug}}{% endif %}">
 
+  <h1>Did it work</h1>
   {% block header %}
     {% set headerComponent = "../"+config.headerComponent %}
     {% include headerComponent %}
