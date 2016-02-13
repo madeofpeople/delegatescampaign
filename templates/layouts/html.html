@@ -19,6 +19,23 @@
   <meta name="msapplication-TileColor" content="#f00">
   <meta name="msapplication-TileImage" content="/images/tileicon.png">
 
+  <meta itemprop="name" content="{{ config.title }}" />
+  <!-- <meta itemprop="image" content="[ LISTING IMAGE ]" /> -->
+  <meta itemprop="description" content="{{ config.description }}" />
+   
+  <meta property="og:title" content="{{ config.title }}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="{{ config.definition }}" />
+  <!-- <meta property="og:image" content="[ LISTING IMAGE ]" /> -->
+  <meta property="og:url" content="http://superdelegatedemocracy.com/" />
+  <meta property="og:site_name" content="{{ config.title }}" />
+   
+  <meta name="twitter:card" content="{{ config.description }}">
+  <meta name="twitter:title" content="{{ config.title }}">
+  <meta name="twitter:description" content="{{ config.definition }}">
+  <!-- <meta name="twitter:image" content="[ LISTING IMAGE ]"> -->
+  <meta name="twitter:url" content="http://superdelegatedemocracy.com/">
+
   <title>
     {% block title %}{{config.title | title}}{% endblock %}
   </title>
@@ -47,21 +64,23 @@
   {% endblock %}
 
   <main role="main" class="main">
+    <div class="container-fluid">
+    {% block contents %}
 
-  {% block contents %}
+      <article>
 
-    <article>
+        <div class="content">
+          <h1>{{ title }}</h1>
+          <p>{{ description }}</p>
+        </div>
 
-      <div class="content">
-        <h1>{{ title }}</h1>
-        <p>{{ description }}</p>
-      </div>
+        {{contents|safe}}
 
-      {{contents|safe}}
-    </article>
+      </article>
 
-  {% endblock %}
-</main>
+    {% endblock %}
+    </div>
+  </main>
 
   {% block footer %}
     {% set footerComponent = "../"+config.footerComponent %}

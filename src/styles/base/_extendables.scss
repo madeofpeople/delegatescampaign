@@ -8,14 +8,6 @@
   cursor: pointer;
 }
 
-.mySelector{
-  @extend %link-button;
-}
-
-.anotherSelector {
-  @extend %link-button
-}
-
 // self exaplanatory
 %responsive-image{
   width: 100% !important;

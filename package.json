@@ -30,7 +30,9 @@
     "test": "npm run build",
     "start": "grunt",
     "postinstall": "bower install",
-    "ghdeploy": "NODE_ENV=gh npm run build && grunt deploy:github"
+    "ghdeploy": "NODE_ENV=gh npm run build && grunt deploy:github",
+    "prea11y": "mkdir -p build/a11y",
+    "a11y": "pa11y -c ./pa11y.json -r html -l none file://$(pwd)/build/index.html > build/a11y/index.html"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
@@ -44,15 +46,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/madeofpeople/delegatescampaign"
+    "url": "https://github.com/dhornbein/delegatescampaign"
   },
   "config": {
     "kstatic": {
       "base_url": "/",
-      "gh_base": "http://madeofpeople.github.io/delegatescampaign/"
+      "gh_base": "http://superdelegatedemocracy.com/"
     },
-    "repo": "madeofpeople/delegatescampaign",
-    "deploy": "git@github.com:madeofpeople/delegatescampaign.git",
+    "repo": "dhornbein/delegatescampaign",
+    "deploy": "git@github.com:dhornbein/delegatescampaign.git",
     "branch": "gh-pages"
   }
 }

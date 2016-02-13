@@ -1,3 +1,85 @@
-.state-landing {
-
+.delegates-list{
+  & > h2 { margin-bottom: 2em; }
 }
+
+.delegate {
+  margin-bottom: 2em;
+  margin-top: 2em;
+  box-shadow: 6px 6px 0 rgba(0,0,0,.3);
+
+  &.endorse-clinton .title {
+    background-color: darken($blue,20%);
+  }
+
+  &.endorse-bernie .title {
+    background-color: $red;
+  }
+
+  .title {
+    background-color: black;
+    background-image: url(../images/diagonal.png);
+    border: 5px solid white;
+    color: white;
+    margin: -2em auto 1em;
+    padding: 1em 0;
+    text-align: center;
+    width: 250px;
+  }
+  .del-social {
+    margin-bottom: 1em;
+    a {
+      .fa-circle {
+        color: darken($yellow,30%);
+      }
+      &:hover .fa-circle {
+        color: $yellow;
+      }
+      .btn {
+        color: darken($yellow,80%);
+        border-radius: 10px;
+      }
+    }
+  }
+  .del-contact {
+
+  }
+  .del-note {
+    .del-note-header {
+      border-bottom: 1px solid $gray-mid;
+      margin-bottom: .5em;
+      text-align: center;
+      span {
+        background: $gray-mid;
+        padding: 5px 10px 1px;
+        float: left;
+        border-radius: 3px 3px 0 0;
+      }
+    }
+
+    p {
+      padding: 1em;
+    }
+
+    @media(max-width:$screen-xs) {
+      .del-note-header {
+        margin-top: .5em;
+        span {
+          font-size: 13px;
+          float: none;
+          display: inline-block
+        }
+      }
+      p {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+@media(min-width:$screen-lg) {
+.delegates-list{
+  .delegate:last-child:not(:only-child) { margin-left:10px; }
+  .delegate:only-child { margin-left: 30%; }
+  }
+}
+

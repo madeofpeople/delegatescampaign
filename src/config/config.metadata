@@ -1,7 +1,8 @@
 ---
-title: Whatever the Name of This Thing Will Be.
-description: Enough, is Enough!
-headerComponent: "../src/components/organisms/navbar/navbar.html"
+title: Superdelegate Democracy
+description: If you want Bernie elected, you better know what 'Superdelegate' means.
+definition: "Superdelegates are party leaders (often donors) and politicians who get to cast special 'VIP' votes for President at the Democratic National Conventions. They're about 700 people, insiders and party elites, and they get a way bigger say than any one state."
+headerComponent: "../src/components/organisms/header/header.html"
 footerComponent: "../src/components/organisms/footer/footer.html"
 placeholderImage: https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/SMPTE_Color_Bars_16x9.svg/2000px-SMPTE_Color_Bars_16x9.svg.png
 defaultAltText: "Alt text is important for accessibility!"
@@ -12,6 +13,7 @@ stylesheets:
   - 'styles/main.css'
 scripts:
   header:
+    - vendor/jquery/dist/jquery.min.js
     - vendor/bootstrap-sass-twbs/assets/javascripts/bootstrap.min.js
   footer:
     - js/brn.js

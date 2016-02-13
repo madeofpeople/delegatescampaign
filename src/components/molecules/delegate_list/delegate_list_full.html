@@ -1,0 +1,96 @@
+    {% set delCount = 0 %}
+    {% for row, val in gSheets["Delegates"].rows %}
+      {% if val.state == abbr or val.state == title and val.candidate|lower != "bernie" %}
+        {% set delCount += 1 %}
+
+        {% if delCount % 2 === 0 %}
+          {% set delClass = 'col-xs-10 col-xs-offset-1 col-lg-5 col-lg-offset-0' %}
+        {% else %}
+          {% set delClass = 'col-xs-10 col-xs-offset-1 col-lg-5 col-lg-offset-1' %}
+          <div class="row">
+        {% endif %}
+
+      <div class="delegate bk-white {{ delClass }} endorse-{{val.candidate|lower|default('uncommitted')}}">
+        <div class="row ">
+          <div class="title">{{val.candidate|safe|default('Uncommitted')}}</div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6 text-right">
+            <p><strong class="lead">{{val.name|safe}}</strong><br>{{val.title|safe}}</p>
+          </div>
+          <div class="col-xs-6 del-social">
+            {% if val.facebook %}
+            <a href="{{val.facebook|replace('\s','')}}">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+              </span></a>
+            {% endif %}
+            {% if val.twitter %}
+            <a href="https://twitter.com/{{val.twitter|safe|replace('(https?://)?(twitter.com/)?@?','')|replace('\s','')}}">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span></a>
+            {% endif %}
+            {% if val.youtube %}
+            <a href="{{val.youtube|replace('\s','')}}">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+              </span></a>
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="row del-contact">
+          <div class="col-xs-6 text-right">
+            <p>
+              {% if val.phone %}
+                Phone: {{val.phone|safe}}
+              <br>
+              {% endif %}
+              {% if val.fax %}
+                Fax: {{val.fax|safe}}
+              {% endif %}
+            </p>
+          </div>
+          <div class="col-xs-6">
+            <p>
+              {% if val.email %}
+                <a href="mailto:{{val.email|safe|replace('\s','')}}" target="_blank" class="btn btn-default btn-sm"><i class="fa fa-envelope"></i> Email</a>
+              {% elseif val.emailform %} 
+                <a href="https://{{val.emailform|safe|replace('^https?://','')|replace('\s','')}}" target="_blank" class="btn btn-default btn-sm"><i class="fa fa-envelope"></i> Email</a>
+              {% endif %}
+              {% if val.website %}
+                <a href="https://{{val.website|safe|replace('^https?://','')|replace('\s','')}}" target="_blank" class="btn btn-default btn-sm"><i class="fa fa-globe"></i> Website</a>
+              {% endif %}
+            </p>
+          </div>
+        </div>
+        {% if val.address %}
+        <div class="row del-note">
+          <div class="col-xs-12">
+            <hr>
+            <p class="text-center">{{val.address|safe}}</p>
+          </div>
+        </div>
+        {% endif %}
+        {% if val.notes %}
+        <div class="row del-note">
+          <div class="col-xs-12">
+            <hr>
+            <p class="text-center">Note...</p>
+            <p>{{val.notes|safe}}</p>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+
+      {% if delCount % 2 === 0 %}
+        </div>
+      {% endif %}
+
+
+      {% endif %}
+    {% endfor %}

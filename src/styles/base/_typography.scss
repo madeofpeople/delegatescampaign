@@ -34,42 +34,9 @@ cillum dolore eu fugiat nulla pariatur.</blockquote>
 Styleguide eecs_global.typography
 */
 
-// Source Sans Pro Vendor
-@font-face {
-  font-family: 'Source Sans Pro';
-  src: url('../vendor/fontface-source-sans-pro/fonts/WOFF/OTF/SourceSansPro-Regular.otf.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
 
-@font-face {
-  font-family: 'Source Sans Pro';
-  src: url('../vendor/fontface-source-sans-pro/fonts/WOFF/OTF/SourceSansPro-It.otf.woff') format('woff');
-  font-weight: normal;
-  font-style: italic;
-}
+@import url(https://fonts.googleapis.com/css?family=Bangers|Arvo:400,700);
 
-@font-face {
-  font-family: 'Source Sans Pro';
-  src: url('../vendor/fontface-source-sans-pro/fonts/WOFF/OTF/SourceSansPro-Bold.otf.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Source Sans Pro';
-  src: url('../vendor/fontface-source-sans-pro/fonts/WOFF/OTF/SourceSansPro-BoldIt.otf.woff') format('woff');
-  font-weight: bold;
-  font-style: italic;
-}
-
-// Berkeley.edu entypo subset for "By the Numbers"
-@font-face {
-  font-family: 'entypo';
-  src: url('../fonts/fontello.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
 
 h1,
 h2,
@@ -80,6 +47,11 @@ h5 {
   line-height: 1;
   letter-spacing: .05em;
   font-weight: bold
+}
+
+h1,h2 {
+  font-family: 'Bangers', impact;
+  margin-bottom: 1em;
 }
 
 %h6 {

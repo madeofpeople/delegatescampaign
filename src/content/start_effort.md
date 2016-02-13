@@ -1,4 +1,4 @@
 ---
-template: pages/start_effort.html
+template: layouts/start_effort.html
 pageSlug: start-effort
 ---

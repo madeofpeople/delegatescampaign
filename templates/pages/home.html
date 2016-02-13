@@ -2,31 +2,43 @@
 
 {% block contents %}
 
+    {#{% include "../../src/components/molecules/hero/hero.html" %}#}
 
-    {% include "../../src/components/molecules/hero/hero.html" %}
+    <section class="row text-center padded">
+      <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3 bk-white padded-sm">
+        <p class="lead"><strong>Did you know that</strong></p>
+        <h1>Superdelegates</h1>
+        <p class="lead"><strong>can decide the Democratic primary for you?</strong></p>
+      </div>
+    </section>
+    
+    <section class="row text-center padded bk-red bk-tone-btm">
+      <div class="col-xs-12">
+        <h2 class="text-white">Don't let it happen</h2>
+        <a href="http://pac.petitions.moveon.org/sign/superdelegates-dont-deny" class="btn btn-warning btn-lg">Sign Here!</a>
+        <br>
+      </div>
+      <div class="col-sm-12 col-md-8 col-md-offset-2">
+        <iframe src="http://petitions.moveon.org/embed/widget.html?v=3&name=superdelegates-dont-deny" class="moveon-petition bk-white" id="petition-embed" style="width:100%;height: 430px;border:none;border-radius: 10px;margin-top:1em;"></iframe>
+      </div>
+    </section>
+    
+    <section class="row padded">
+      <div class="col-xs-10 col-xs-offset-1">
+        <h2 class="text-center">Superwhat?</h2>
+        <div class="row">
+          <p class="col-sm-4 text-right hidden-xs"><strong>Superdelegates:</strong></p>
+          <p class="col-sm-4 lead visible-xs"><strong>Superdelegates:</strong></p>
+          <p class="col-sm-8"><span class="font-mono">(ˈso͞opərˌdeləɡət)</span> <em>n</em>: A nonelected delegate to a presidential nominating convention, usually an office-holder or influential party leader, who is not pledged to support any particular candidate.</p>
+        </div>
+      </div>
+    </section>
+    
+    <section class="row section-states bk-blue padded">
+      <div class="col-sm-12 col-lg-8 col-lg-offset-2">
+        <h2 id="delegates" class="text-center">State Superdelegates</h2>
+        {% include "../../src/components/molecules/state_list/state_list.html" %}
+      </div>
+    </section>
 
-    <div class="container">
-
-      <section class="row section-states">
-        <ul>
-        {% for state in collections.states %}
-          <li><a href="states/{{state.title|slug}}">{{state.title|safe}}</a></li>
-        {% endfor %}
-        </ul>
-      </section>
-
-      <section class="row section-touts">
-        <!--
-          {# is a swig comment #}
-          this block is just here to show how to include tempaltes
-        -->
-        {#
-          {% set toutClassNames="threeup" %}
-          {% include "../../src/components/molecules/tout/tout.html" %}
-          {% include "../../src/components/molecules/tout/tout.html" %}
-          {% include "../../src/components/molecules/tout/tout.html" %}
-        #}
-      </section>
-
-    </div>
 {% endblock %}

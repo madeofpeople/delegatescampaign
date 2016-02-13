@@ -2,34 +2,68 @@
 
 {% block contents %}
 
+{% set clinton = 0 %}
+{% set bernie = 0 %}
+{% set total = 0 %}
+{% for row, val in gSheets["Delegates"].rows %}
+  {% if val.state == abbr or val.state == title %}
+    {% set total += 1 %}
+    {% if val.candidate|lower == "clinton" %}
+      {% set clinton += 1 %}
+    {% endif %}
+    {% if val.candidate|lower == "bernie" %}
+      {% set bernie += 1 %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+{% set uncommitted = total - clinton - bernie %}
+
   <article>
+    <section class="row text-center padded-sm">
+      <p class="lead">Superdelegates in</p>
+      <h1>{{title|safe}}</h1>
+    </section>
 
-    <h1>This is the {{title|safe}} Page</h1>
+    <section class="row padded bk-red bk-tone-btm">
+      {% if total > 1 %}
+      <h1 class="text-center"><span class="font-serif">{{ total }}</span> Superdelegates</h1>
+      <h3 class="text-center">
+        {% if clinton + bernie > 0 %}
+        <span class="font-serif">{{ bernie }}</span> Sanders - <span class="font-serif">{{ clinton }}</span> Clinton - <span class="font-serif">{{ uncommitted }}</span>
+        {% endif %}
+        Uncommitted</h3>
+      <p class="lead text-center">Tell these {{ uncommitted + clinton }} to vote for Bernie!</p>
+      <p class="text-center hide">
+        <a href="#delegate" class="btn btn-warning btn-lg">contact them now</a>
+      </p>
+      {% elseif total > 0 %}
+        {% if bernie %}
+          <h1 class="text-center">This Superdelegates is for Bernie!</h1>
+        {% else %}
+          <h1 class="text-center">Tell this Superdelegates to vote for Bernie!</h1>
+        {% endif %}
+      {% else %}
+      <h2 class="text-center">We don't know of any Superdelegates from {{ title|safe }}</h2>
+      <p class="text-center lead">Yet...</p>
+      {% endif %}
+    </section>
+    
+    {% if total > 0 %}
+    <section class="row delegates-list padded bk-blue">
+      <h2 class="text-center">Delegates for {{title|safe}}</h2>
+      <a id="delegate" name="delegate"></a>
+      <div class="col-xs-12">
+        {% include "../../src/components/molecules/delegate_list/delegate_list.html" %}
+      </div>
+    </section>
+    {% endif %}
 
-    {% include "../../src/components/molecules/lede/lede.html" with lede only%}
-
-    {{contents|safe}}
-
-    <section class="delegates">
-      <h2>Delegates for {{title|safe}}</h2>
-      <table>
-        <thead>
-          <tr>
-            <td>Name</td>
-            <td>Phone</td>
-          </tr>
-        </thead>
-        <tbody>
-        {% for row, val in gSheets["Delegates"].rows %}
-          {% if val.state == abbr %}
-          <tr>
-            <td class="name">{{val.name}}</td>
-            <td class="phone">{{val.phone}}</td>
-          </tr>
-          {% endif %}
-        {% endfor %}
-        </tbody>
-      </table>
+    <section class="row section-states padded">
+      <div class="col-sm-12 col-lg-8 col-lg-offset-2">
+        <h3 id="delegates" class="text-center">Other Superdelegates</h3>
+        <hr>
+        {% include "../../src/components/molecules/state_list/state_list.html" %}
+      </div>
     </section>
   </article>
 
