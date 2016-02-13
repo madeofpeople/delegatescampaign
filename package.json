@@ -46,7 +46,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dhornbein/delegatescampaign"
+    "url": "https://github.com/madeofpeople/delegatescampaign"
   },
   "config": {
     "kstatic": {
@@ -54,7 +54,7 @@
       "gh_base": "http://superdelegatedemocracy.com/"
     },
     "repo": "dhornbein/delegatescampaign",
-    "deploy": "git@github.com:dhornbein/delegatescampaign.git",
+    "deploy": "git@github.com:madeofpeople/delegatescampaign.git",
     "branch": "gh-pages"
   }
 }
